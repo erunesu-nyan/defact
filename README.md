@@ -28,6 +28,9 @@ answer, not just one though, a lot of different-yet-insightful takes from those 
 ```
 git clone https://github.com/erunesu-nyan/defact.git 
 cd defact
+cp .env.example .env
+composer install
+php artisan key:generate
 npm install && npm run dev
 php artisan migrate
 php artisan serve
