@@ -16,9 +16,10 @@ class CreateThreadsTable extends Migration
         Schema::create('threads', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('description');
-            $table->integer('myth_count');
-            $table->integer('fact_count');
+            $table->text('description');
+            $table->string('image')->nullable();
+            $table->integer('myth_count')->default(0);
+            $table->integer('fact_count')->default(0);
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')
 			    ->references('id')
